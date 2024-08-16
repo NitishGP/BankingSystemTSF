@@ -19,8 +19,10 @@ if(!$rows){
 $sql_3 = "SELECT * FROM customers WHERE savings_ac='$receiver_ac';";
 $fetch2 = mysqli_query($conn, $sql_3);
 if (!$fetch2) {
-    echo "Error: Invalid A/C no.";
+    
+    echo "error: Invalid A/c no. " . mysqli_error($conn);
     exit;
+    
 }
 $rows_1 = mysqli_fetch_assoc($fetch2);
 if(!$rows_1){

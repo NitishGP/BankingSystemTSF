@@ -1,7 +1,7 @@
 <?php
 session_start();
 $id = $_GET['id'];
-include("<includes/dataconn.php");
+include("includes/dataconn.php");
 
 $sql = "SELECT * FROM customers WHERE id='$id';";
 $fetch = mysqli_query($conn, $sql);
@@ -49,8 +49,8 @@ $_SESSION['id'] = $rows['id'];
         <div class="item " id="toggle">
             <form action="api/submit.php" method="post">
                 <div class="inputBox">
-                    <label for="">Account no.:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$</label>
-                    <input class="input" name="account" min="1" placeholder="A/c no." type="number"><br>
+                    <label for="">Account no.: $</label>
+                    <input class="input" name="account" min="1000000000" max="1999999999" placeholder="A/c no." type="number"><br>
                 </div>
                 <div class="inputBox">
                     <label for="">Transfer amount: $</label>
